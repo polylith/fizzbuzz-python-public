@@ -1,0 +1,5 @@
+ARG PYTHON_WORKSPACE_VERSION=latest
+FROM eu.gcr.io/polylith-177713/python-workspace:$PYTHON_WORKSPACE_VERSION
+
+ADD requirements.txt requirements.txt
+RUN pip install -r requirements.txt

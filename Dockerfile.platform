@@ -1,0 +1,14 @@
+FROM python:3.6-slim-stretch
+
+RUN apt-get update && apt-get -y install make
+
+WORKDIR /usr/src/app
+
+ADD requirements.txt requirements.txt
+ADD Makefile Makefile
+RUN make init_runtime
+
+ADD . .
+
+EXPOSE 9091
+CMD ["/bin/bash", "-c", "chmod +x /agent-download-directory/agent && /agent-download-directory/agent"]

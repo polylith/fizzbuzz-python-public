@@ -1,0 +1,14 @@
+FROM python:3.6-slim-stretch
+
+RUN apt-get update && apt-get -y install make
+
+WORKDIR /app
+ADD requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+ADD . .
+
+VOLUME /data/task-data
+WORKDIR /data/task-data
+
+EXPOSE 9091
+CMD ["/bin/bash", "-c", "cp -R /app/. /data/task-data/ && /agent-download-directory/agent"]
