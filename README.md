@@ -1,7 +1,7 @@
 # FizzBuzz Python
 This repository is for demonstration how a python task on the EntwicklerHeld.de platform works.
 
-## File
+## Files
 ### fizzbuzz package
 In this package are the main Python files for the challenge. It mainly consists of: `tests.py` which contains all tests for the platform and a `task.py` which is the file where the user writes the code.
 
